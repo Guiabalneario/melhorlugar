@@ -1,0 +1,419 @@
+/* Cores Base da Bandeira de Balneário Camboriú (Azul e Branco com Dourado/Amarelo) */
+:root {
+    --color-azul: #007bff; /* Azul vibrante (Base) */
+    --color-azul-claro: #e9f5ff; /* Fundo mais claro */
+    --color-dourado: #FFC107; /* Amarelo/Dourado para destaque */
+    --color-branco: #ffffff;
+    --color-preto-texto: #333333;
+    --color-sombra: rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--color-azul-claro);
+    color: var(--color-preto-texto);
+    line-height: 1.6;
+}
+
+/* ----------------------------------------------------------------
+    HEADER E NAVEGAÇÃO
+---------------------------------------------------------------- */
+header {
+    background-color: var(--color-azul);
+    color: var(--color-branco);
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px var(--color-sombra);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: var(--color-dourado); /* Destaque na logo */
+    letter-spacing: 1px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li a {
+    color: var(--color-branco);
+    text-decoration: none;
+    padding: 10px 15px;
+    margin: 0 5px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-weight: 600;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    background-color: var(--color-branco);
+    color: var(--color-azul);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* ----------------------------------------------------------------
+    LAYOUT PRINCIPAL
+---------------------------------------------------------------- */
+main {
+    padding: 20px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.tab-content {
+    display: none;
+    padding: 40px;
+    background-color: var(--color-branco);
+    border-radius: 10px;
+    box-shadow: 0 8px 15px var(--color-sombra);
+    animation: fadeIn 0.8s ease-in-out;
+    margin-top: 20px;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ----------------------------------------------------------------
+    SEÇÃO PRINCIPAL - HERO E CARDS
+---------------------------------------------------------------- */
+.hero {
+    text-align: center;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, var(--color-azul), #0056b3);
+    color: var(--color-branco);
+    border-radius: 8px;
+    margin-bottom: 30px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.hero h1 {
+    font-size: 2.8em;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.hero p {
+    font-size: 1.2em;
+    font-weight: 300;
+}
+
+.data-container h2 {
+    color: var(--color-azul);
+    border-bottom: 3px solid var(--color-dourado);
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    font-weight: 600;
+    font-size: 1.8em;
+}
+
+.card-group {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    background-color: var(--color-azul-claro);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px var(--color-sombra);
+    flex: 1 1 300px; /* Flexibilidade e tamanho base */
+    min-height: 250px;
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Animação suave 3D */
+    position: relative;
+    overflow: hidden;
+    border-left: 5px solid var(--color-azul);
+}
+
+.card:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    color: var(--color-azul);
+    margin-bottom: 15px;
+    font-weight: 700;
+    font-size: 1.3em;
+}
+
+.card p {
+    margin-bottom: 8px;
+}
+
+.icon-azul {
+    color: var(--color-azul);
+    font-size: 2.5em;
+    margin-bottom: 15px;
+}
+.icon-dourado {
+    color: var(--color-dourado);
+    font-size: 2.5em;
+    margin-bottom: 15px;
+}
+.card-destaque {
+    border-left: 5px solid var(--color-dourado);
+    background-color: #fff8e1; /* Fundo mais claro para destaque */
+}
+
+/* ----------------------------------------------------------------
+    SEÇÃO SEGURANÇA E IMOBILIÁRIO
+---------------------------------------------------------------- */
+#seguranca h3 {
+    color: var(--color-azul);
+    font-size: 1.5em;
+    border-bottom: 2px dashed #ccc;
+    padding-bottom: 5px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.info-box {
+    background-color: var(--color-azul-claro);
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.info-box.imovel {
+    border: 1px solid var(--color-azul);
+}
+
+.info-box i {
+    font-size: 1.5em;
+    color: var(--color-azul);
+    margin-right: 10px;
+}
+
+.info-box ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.info-box ul li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.info-box ul li i {
+    font-size: 1em;
+    color: green;
+}
+
+/* Mapa Simulado */
+.mapa-simulado {
+    background-color: #f7f7f7;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    margin-top: 20px;
+    border: 1px dashed #aaa;
+}
+.mapa-simulado p {
+    font-style: italic;
+    color: #666;
+    margin-bottom: 15px;
+}
+.bairros-legenda {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+.bairros-legenda div {
+    padding: 8px 15px;
+    color: var(--color-branco);
+    border-radius: 5px;
+    font-size: 0.9em;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.map-placeholder {
+    height: 300px;
+    background-color: #ccc;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    color: #555;
+}
+.map-placeholder i {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+/* ----------------------------------------------------------------
+    POLÍTICAS PÚBLICAS
+---------------------------------------------------------------- */
+.policy-card {
+    background-color: var(--color-branco);
+    border: 2px solid var(--color-azul-claro);
+    padding: 25px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px var(--color-sombra);
+    transition: all 0.3s ease;
+}
+
+.policy-card:hover {
+    border-left: 5px solid var(--color-dourado);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.policy-card i {
+    float: right;
+    font-size: 2em;
+    color: var(--color-azul);
+}
+
+.policy-card h3 {
+    color: var(--color-azul);
+    font-size: 1.4em;
+    margin-bottom: 10px;
+    border-bottom: none;
+}
+
+/* ----------------------------------------------------------------
+    DIREITO IMOBILIÁRIO E TRABALHISTA
+---------------------------------------------------------------- */
+.curiosidade, .alerta-trabalhista {
+    background-color: #f3f9ff;
+    border-left: 5px solid var(--color-azul);
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 3px var(--color-sombra);
+}
+.curiosidade:nth-child(even) {
+    border-left: 5px solid var(--color-dourado);
+}
+
+
+.curiosidade h4, .alerta-trabalhista h4 {
+    color: var(--color-azul);
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.curiosidade i, .alerta-trabalhista i {
+    font-size: 1.5em;
+    color: var(--color-azul);
+    margin-right: 10px;
+}
+
+.alerta-trabalhista {
+    background-color: #ffe0e0; /* Cor de alerta suave */
+    border-left-color: #cc0000;
+}
+.alerta-trabalhista i {
+    color: #cc0000;
+}
+
+.alerta-trabalhista ul {
+    margin-left: 20px;
+}
+.alerta-trabalhista ul li {
+    margin-bottom: 5px;
+}
+
+/* ----------------------------------------------------------------
+    SEÇÃO SOBRE
+---------------------------------------------------------------- */
+.about-box {
+    text-align: center;
+    padding: 40px;
+    background-color: var(--color-azul);
+    color: var(--color-branco);
+    border-radius: 10px;
+    border: 3px solid var(--color-dourado);
+}
+
+.about-box i {
+    font-size: 3em;
+    color: var(--color-dourado);
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 50%;
+    background-color: var(--color-branco);
+}
+
+.about-box p {
+    font-size: 1.1em;
+    line-height: 1.8;
+}
+
+/* ----------------------------------------------------------------
+    FOOTER
+---------------------------------------------------------------- */
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: var(--color-azul);
+    color: var(--color-branco);
+    margin-top: 30px;
+    font-size: 0.9em;
+}
+
+/* ----------------------------------------------------------------
+    RESPONSIVIDADE
+---------------------------------------------------------------- */
+@media (max-width: 900px) {
+    header {
+        flex-direction: column;
+        padding: 10px 20px;
+    }
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 10px;
+    }
+    nav ul li a {
+        padding: 8px 12px;
+        font-size: 0.9em;
+    }
+    .card-group {
+        flex-direction: column;
+    }
+    .card {
+        flex: 1 1 100%;
+    }
+}
+@media (max-width: 600px) {
+    .tab-content {
+        padding: 20px;
+    }
+    .hero h1 {
+        font-size: 2em;
+    }
+    .bairros-legenda {
+        flex-direction: column;
+    }
+}
